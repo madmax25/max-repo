@@ -1,0 +1,16 @@
+---
+pages:
+- family-pictures.md
+- about.md
+- resources-html.md
+- _posts/new-test.md
+- _posts/2017-12-29-sample-post.md
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+  config:
+    required: true
+  default: post
