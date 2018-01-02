@@ -1,10 +1,4 @@
 ---
-title: Family Pictures
-layout: post
-date: 2018-01-01 17:11:13 +0000
-permalink: family-pictures/
----
----
 layout: default
 title: Family Pictures
 permalink: "family-pictures/"
