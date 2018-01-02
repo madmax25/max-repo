@@ -24,8 +24,8 @@ Hope this blog can bring you some encouragement and please feel free to comment 
 
 Kelly
 
-Oh, and if you’re wondering what in the world the name of this blog is about, just read the first post 
+Oh, and if you’re wondering what in the world the name of this blog is about, just read the first post!  🙂
 
-![](/_site/assets/034.jpg)
+{% include image.html url="034.jpg" description="Our last Christmas all together in 2013. It was wonderful!" %}
 
-_Our last Christmas all together in 2013. It was wonderful!_
+
