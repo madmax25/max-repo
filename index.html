@@ -2,29 +2,63 @@
 layout: default
 ---
 
-{% for post in site.posts %}
-	<article class="post">
+{% include disqus_comment.html %}
+
+{% for post in paginator.posts %}
+
+	<article class="post type-post status-publish format-standard hentry">
 		<header class="post-header">
-			<span class="post-meta">
-				<time datetime="{{post.date | date_to_xmlschema}}">
-					{{post.date | date_to_long_string}}
-				</time>
-			</span>
 			<h2 class="entry-title">
 				<a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a>
 			</h2>
+
+<div class="entry-meta">
+        <span class="entry-date">{{ post.date | date: "%B %-d, %Y %l:%M %P" }}</span>
+
+<span class="entry-meta-sep"> , </span>
+
+<span class="comments-link">
+<a class="disqus-comment-count" href="{{ site.baseurl }}{{ post.url }}#disqus_thread" data-disqus-identifier="{% if post.disqus_identifier %}{{ post.disqus_identifier}}{% else %}{{ post.url }}{% endif %}">0 Comments</a>
+</span>
+</div><!-- .entry-meta -->
+
+    
+
 		</header>
 		<section class="post-excerpt">
-			<p>{{post.excerpt}}&hellip;</p>
+			<p>{{ post.excerpt }}</p>
 		</section>
 		<footer class="tags">
-			<span class="post-meta">
-				{% for category in post.categories %}
-					{% if forloop.index > 1 %}, {% endif%}
-					{{category}}
-				{% endfor %}
-			</span>
+{% if post.categories.size > 0 %}Categories:{% endif%}
+ 
+			<span class="post-meta">{% for category in post.categories %}{% if forloop.index > 1 %}, {% endif%}{{category | strip_html | strip_newlines }}{% endfor %}</span>
 		</footer>
 	</article>
 {% endfor %}
+
+{% if paginator.total_pages > 1 %}
+
+<div id="loop-nav-numeric" class="nav-numeric">
+  <h3 class="assistive-text">Post Navigation</h3>
+
+		{% if paginator.previous_page %}
+			<a class="prev page-numbers" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+		{% endif %}
+
+		{% for page in (1..paginator.total_pages) %}
+			{% if page == paginator.page %}
+				<span class="page-numbers current">{{ page }}</span>
+			{% elsif page == 1 %}
+				<a class="page-numbers" href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+			{% else %}
+				<a class = "page-numbers" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+			{% endif %}
+		{% endfor %}
+
+		{% if paginator.next_page %}
+			<a class="next page-numbers" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+		{% endif %}
+<div class="clear"></div>
+	</div>
+{% endif %}
 

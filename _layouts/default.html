@@ -30,6 +30,7 @@ img.emoji {
 <link rel="https://api.w.org/" href="http://www.tiltedpicture.com/wp-json/">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.tiltedpicture.com/xmlrpc.php?rsd">
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.tiltedpicture.com/wp-includes/wlwmanifest.xml"> 
+</head>
 
 <div class="wrapper">  
   <div id="header">  
@@ -41,18 +42,32 @@ img.emoji {
 
     
   <div id="logo-image">
-    <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/assets/cropped-tilted-picture.png" width="940" height="200" alt="Tilted Picture"></a>
+    <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/cropped-tilted-picture.png" width="940" height="200" alt="Tilted Picture"></a>
   </div><!-- end of #logo -->
   
   
 </div>        </div>
       </div>
       
-      <div id="nav">
-        <div class="container_16 clearfix">        
-{{ content}}
-
+<div id="nav">
+        <div class="container_16 clearfix">
+          <div class="grid_16">
+            <div class="menu clearfix"><ul id="menu-menu-1" class="sf-menu sf-js-enabled"><li id="menu-item-142" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-142"><a href="{{ site.baseurl }}/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="{{ site.baseurl}}/aboutkelly">About Kelly</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="{{ site.baseurl}}/family-pictures">Family Pictures</a></li>
+<li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-148"><a href="{{ site.baseurl}}/resources">Resources</a></li>
+</div>          </div>
+        </div>
       </div>
-  </div>
+<div class="container_16 clearfix">
+  
+  <div class="grid_11">
+    <div id="content">	  
+	  
+	        
+{{ content}}
+</div>
+</div>
+</div>
                             
 

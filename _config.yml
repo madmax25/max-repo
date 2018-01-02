@@ -1,3 +1,7 @@
 baseurl: /max-repo
 comments: true
 permalink: /:title
+paginate: 10
+paginate_path: "/page/:num/"
+plugins: [jekyll-paginate] 
+
