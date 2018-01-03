@@ -2,6 +2,7 @@
 pages:
 - family-pictures.md
 - about.md
+- _posts/new-test-post.md
 - _posts/2017-12-29-sample-post.md
 hide_body: false
 fields:
